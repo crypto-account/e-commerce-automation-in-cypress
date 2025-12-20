@@ -1,7 +1,7 @@
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
 describe('API Automation Test - JSONPlaceholder', () => {
-    
+
     it('should fetch posts and return 200 status', () => {
         cy.request('GET', url).then((response) => {
             expect(response.status).to.eq(200);
@@ -35,6 +35,12 @@ describe('API Automation Test - JSONPlaceholder', () => {
         cy.request('PUT', `${url}/1`, updatePayload).then((response) => {
             expect(response.status).to.eq(200);
             expect(response.body.title).to.eq('updated title');
+        });
+    });
+
+    it('should delete a post and return 200 status', () => {
+        cy.request('DELETE', `${url}/1`).then((response) => {
+            expect(response.status).to.eq(200);
         });
     });
 });
