@@ -4,6 +4,13 @@ const inputsHeader = '#inputs-header';
 const checkboxHeader = '#checkbox-header';
 const dropdownListHeader = '#dropdownlist-header';
 const hoversHeader = '#hovers-header';
+const datepickerHeader = '#datepicker-header';
+const basicauthHeader = '#basicauth-header'
+const formHeader = '#form-header'
+const keypressesHeader = '#keypresses-header'
+const draganddropHeader = '#draganddrop-header'
+const addremoveelementsHeader = '#addremoveelements-header'
+const iframeHeader = '#iframe-header'
 
 class HomePage {
 
@@ -26,6 +33,34 @@ class HomePage {
 
     clickHoversTab() {
         cy.get(hoversHeader).click();
+    }
+
+    clickDatepickerTab() {
+        cy.get(datepickerHeader).click();
+    }
+
+    clickBasicAuthTab() {
+        cy.get(basicauthHeader).click();
+    }
+
+    clickFormTab() {
+        cy.get(formHeader).click();
+    }
+
+    clickKeypressesTab() {
+        cy.get(keypressesHeader).click();
+    }
+
+    clickDragAndDropTab() {
+        cy.get(draganddropHeader).click();
+    }
+
+    clickAddRemoveElementsTab() {
+        cy.get(addremoveelementsHeader).click();
+    }
+
+    clickIFrameTab() {
+        cy.get(iframeHeader).click();
     }
 }
 
