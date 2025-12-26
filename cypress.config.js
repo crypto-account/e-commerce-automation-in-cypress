@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'http://simpletestsite.fabrykatestow.pl/',
+    baseUrl: 'https://tapsshop.pl/',
 
     setupNodeEvents(on, config) {
     },
