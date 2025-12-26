@@ -9,10 +9,12 @@ import DragDropPage from "../../page-objects/dragAndDropPage";
 import AddRemoveElementsPage from "../../page-objects/addRemoveElementsPage";
 import IFramePage from "../../page-objects/iFramePage";
 
+const url = 'http://simpletestsite.fabrykatestow.pl/';
+
 describe("E-commerce Automation - Advanced UI Controls", () => {
 
     beforeEach(() => {
-        cy.visit('/');
+        cy.visit(url);
     });
 
     it("should interact with dropdowns", () => {
@@ -109,6 +111,6 @@ describe("E-commerce Automation - Advanced UI Controls", () => {
         const iFramePage = new IFramePage();  
         iFramePage.clickButton1();
         iFramePage.verifyButtonClicked();
-
+        
     });
 });

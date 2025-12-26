@@ -8,6 +8,11 @@ class Urls {
         const url = '/testpage';
         cy.visit(url);
     }
+
+    visitMyAccountPage() {
+        const url = '/moje-konto';
+        cy.visit(url);
+    }
 }
 
 export default Urls;

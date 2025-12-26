@@ -2,10 +2,12 @@ import HomePage from '../../page-objects/homePage';
 import InputPage from '../../page-objects/inputPage';
 import CheckboxPage from '../../page-objects/checkboxPage';
 
+const url = 'http://simpletestsite.fabrykatestow.pl/';
+
 describe("E-commerce Automation - Basic UI Controls", () => {
 
     beforeEach(() => {
-        cy.visit('/');
+        cy.visit(url);
     });
 
     it("should interact with input fields", () => {
