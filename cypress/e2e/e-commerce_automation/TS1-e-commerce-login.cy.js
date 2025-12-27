@@ -6,7 +6,7 @@ describe("E-commerce Automation - Test Suite Login", () => {
 
     const homePage = new HomePage();
     const myAccountPage = new MyAccountPage();
-    
+
     beforeEach(() => {
         cy.visit('/');
      });
@@ -15,7 +15,7 @@ describe("E-commerce Automation - Test Suite Login", () => {
         cy.fixture('users').as('userData');
     });
 
-    
+
     it("should login to application", function() {
         
         myAccountPage.visitMyAccountPage();
