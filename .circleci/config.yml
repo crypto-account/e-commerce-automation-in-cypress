@@ -4,12 +4,9 @@ orbs:
 workflows:
   build:
     jobs:
-    - cypress/install
-    - cypress/run:
-          requires:
-            - cypress/install
+      - cypress/run:
           browser: chrome
-          record: false
+          record: false # Skoro nie używasz Cypress Cloud
           parallel: false
           group: "End-to-End Tests"
             
