@@ -4,7 +4,12 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run: # "run" job comes from "cypress" orb
-          # start-command: 'npm run start'
-
-
+    - cypress/install
+    - cypress/run:
+          requires:
+            - cypress/install
+          browser: chrome
+          record: false
+          parallel: false
+          group: "End-to-End Tests"
+            
