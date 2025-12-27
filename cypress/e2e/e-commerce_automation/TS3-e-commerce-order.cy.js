@@ -5,22 +5,25 @@ import OrderPage from '../../page-objects/orderPage';
 
 describe("E-commerce Automation - Order Process", () => {
 
+    before (function() {
+        cy.fixture('products').as('productData');
+    });
+
         const homePage = new HomePage();
         const cartPage = new CartPage();
         const orderPage = new OrderPage();
 
-    it("should complete an order successfully", () => {
+    it("should complete an order successfully", function() {
 
         homePage.visitHomePage();
-        homePage.addProductToCart();
+        homePage.addProductToCart(this.productData.polo.locator);
         homePage.clickCheckCartFromProductLevel();
-        cartPage.verifyProductInCart();
+        cartPage.verifyProductInCart(this.productData.polo.name);
         cartPage.clickProceedToCheckout();
         orderPage.fillBillingDetails();
         orderPage.clickPlaceOrderButton();
         orderPage.verifyOrderPlaced();
 
-       
     });
 
 });

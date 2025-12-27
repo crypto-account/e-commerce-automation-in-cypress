@@ -2,8 +2,6 @@ import HomePage from '../../page-objects/homePage';
 import MyAccountPage from '../../page-objects/myAccountPage';
 import { faker } from '@faker-js/faker';
 
-
-
 describe("E-commerce Automation - Test Suite Login", () => {   
 
     const homePage = new HomePage();

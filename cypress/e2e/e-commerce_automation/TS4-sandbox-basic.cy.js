@@ -1,4 +1,3 @@
-const { fi } = require("@faker-js/faker");
 
 describe('my first scenario', () => {   
    it('visit main page and click top menu button', () => {
