@@ -1,14 +1,14 @@
 import { Product } from './homePage.js';
 
-const productName = '.product-name';
+const productName = 'td[class="product-name"]';
 const productRemove = 'a[class="remove"]';
 const alertMessage = '.cart-empty.woocommerce-info';
 const proceedToCheckoutButton = 'div[class="wc-proceed-to-checkout"]';
 
 class CartPage {
 
-    verifyProductInCart() {
-        cy.get(productName).should('contain', Product.HoodieWithZipper.Name);
+    verifyProductInCart(product) {
+        cy.get(productName).should('contain', product);
     }
 
     removeProductFromCart() {

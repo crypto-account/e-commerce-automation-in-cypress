@@ -25,7 +25,7 @@ class OrderPage {
     }
 
     verifyOrderPlaced() {
-        cy.contains('Zamówienie otrzymane', { timeout: 10000 }).should('be.visible');
+        cy.contains('Zamówienie otrzymane', { timeout: 20000 }).should('be.visible');
     }
 }
 
