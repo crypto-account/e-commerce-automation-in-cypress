@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@6.7.0 # Dobrą praktyką jest podanie pełnej wersji
-
+  # "cypress-io/cypress@6" installs the latest published
+  # version "s.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@6.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@6
 workflows:
   build:
     jobs:
-      - cypress/run:
-          browser: chrome
-          record: false
-          parallel: false
-          name: "Cypress E2E Tests" # Użyj 'name' zamiast 'group', jeśli nie używasz Cloud
+      - cypress/run: # "run" job comes from "cypress" orb
+          start-command: 'npm run start'
