@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@6
+  cypress: cypress-io/cypress@6.7.0 # Dobrą praktyką jest podanie pełnej wersji
+
 workflows:
   build:
     jobs:
       - cypress/run:
           browser: chrome
-          record: false # Skoro nie używasz Cypress Cloud
+          record: false
           parallel: false
-          group: "End-to-End Tests"
-            
+          name: "Cypress E2E Tests" # Użyj 'name' zamiast 'group', jeśli nie używasz Cloud
