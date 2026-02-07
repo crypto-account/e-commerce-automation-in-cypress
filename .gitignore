@@ -50,4 +50,5 @@ cypress/videos
 /mochawesome-report
 
 # Jeśli w Twoich testach używasz dodatkowych, tymczasowych plików
+cypress/temp
 cypress/temp.DS_Store
