@@ -16,7 +16,9 @@
   "main": "test1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "cy:run": "cypress run",
+    "report:open": "open cypress/reports/index.html"
   },
   "dependencies": {
     "@faker-js/faker": "^8.2.0",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.3.1",
-    "cypress-localstorage-commands": "^2.2.8"
+    "cypress-localstorage-commands": "^2.2.8",
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
