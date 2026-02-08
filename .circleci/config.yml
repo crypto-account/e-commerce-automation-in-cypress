@@ -5,11 +5,19 @@ orbs:
 jobs:
   cypress-run-with-report:
     executor: cypress/default
+    parallelism: 2
     steps:
       - cypress/install:
           install-browsers: true
-      - cypress/run-tests:
-          cypress-command: npx cypress run --browser chrome
+      - run:
+          name: Run Cypress (split by node)
+          command: |
+            if [ "$CIRCLE_NODE_INDEX" -eq 0 ]; then
+              SPEC="cypress/e2e/e-commerce_automation/TS1-*.cy.js,cypress/e2e/e-commerce_automation/TS2-*.cy.js,cypress/e2e/e-commerce_automation/TS3-*.cy.js,cypress/e2e/e-commerce_automation/TS4-*.cy.js,cypress/e2e/e-commerce_automation/TS5-*.cy.js"
+            else
+              SPEC="cypress/e2e/e-commerce_automation/TS6-*.cy.js,cypress/e2e/e-commerce_automation/TS7-*.cy.js,cypress/e2e/e-commerce_automation/TS8-*.cy.js,cypress/e2e/e-commerce_automation/TS9*.cy.js"
+            fi
+            npx cypress run --browser chrome --spec "$SPEC"
       - store_artifacts:
           path: cypress/reports
 
