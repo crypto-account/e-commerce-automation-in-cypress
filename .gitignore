@@ -49,6 +49,9 @@ cypress/videos
 # mochawesome-report (Jeśli używasz popularnego reportera Mochawesome)
 /mochawesome-report
 
+# HTML report (cypress-mochawesome-reporter)
+/cypress/reports
+
 # Jeśli w Twoich testach używasz dodatkowych, tymczasowych plików
 cypress/temp
 cypress/temp.DS_Store

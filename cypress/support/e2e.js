@@ -14,5 +14,6 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import 'cypress-mochawesome-reporter/register';
 import './commands'
 require('@4tw/cypress-drag-drop')
